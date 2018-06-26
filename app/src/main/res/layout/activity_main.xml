@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dcvsmarvel"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/bienvenue_sur_notre_application"
-            android:textSize="35sp"
             android:gravity="center"
+            android:text="@string/bienvenue_sur_notre_application"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="35sp"
+            android:translationY="40dp"
             tools:ignore="HardcodedText" />
 
         <Button
@@ -27,15 +33,17 @@
             android:layout_marginTop="20dp"
             android:onClick="page1"
             android:text="@string/menu"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:translationY="40dp" />
+
 
 
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/dcvsmarvel" />
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@drawable/dcvsmarvel" />
 
 </RelativeLayout>

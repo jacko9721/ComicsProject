@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
 
     private void parseJSON() {
 
-        String URL = "https://comicvine.gamespot.com/api/characters/?api_key=4c0a75deb958541f66786fa3cf07b0287bfdd8ef&sort=name&field_list=name&format=json";
+        String URL = "https://comicvine.gamespot.com/api/characters/?api_key=4c0a75deb958541f66786fa3cf07b0287bfdd8ef&image=name&sort=name&field_list=name&format=json";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -92,4 +92,6 @@ public class MainActivity extends AppCompatActivity implements ExampleAdapter.On
     public void page1(View view) {
         startActivity(new Intent(this, page_2.class));
     }
+
+
 }
