@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">ComicsProject</string>
     <string name="les_comics">Les comics</string>
-    <string name="bienvenue_sur_notre_application">Bienvenue sur notre application</string>
-    <string name="menu">Menu</string>
+    <string name="txt1">Bienvenue sur notre application</string>
+    <string name="txt2">Menu</string>
     <string name="quitter">Quitter</string>
+    <string name="menu1">Comics Vine ?</string>
+    <string name="menu2">Aide</string>
+    <string name="menu3">Rafraichir</string>
+    <string name="menu4">Quitter</string>
     <string name="comic" />
     <string name="choisir_les_comics">choisir les comics</string>
-    <string name="retour_accueil">retour accueil</string>
-    <string name="comics_summary">comics summary</string>
-    <string name="retour">retour</string>
-    <string name="comicssummary">Comics summary</string>
     <string name="character_name">Character Name</string>
+    <string name="notif_1">Découvrez le monde des Comics</string>
+    <string name="notif_2">Philanthrope</string>
+    <string name="toast">Télechargement terminé</string>
 </resources>

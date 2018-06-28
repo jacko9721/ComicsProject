@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="comics_summary">comics summary</string>
+    <string name="bienvenue_sur_notre_application">Welcome to our application</string>
+    <string name="menu">Menu</string>
+    <string name="quitter">Exit</string>
+    <string name="menu1">Comics Vine ?</string>
+    <string name="menu2">Help</string>
+    <string name="menu3">Refresh</string>
+    <string name="menu4">Exit</string>
+    <string name="comic" />
+    <string name="choisir_les_comics">Choose Comics</string>
+    <string name="retour_accueil">Back home</string>
+    <string name="retour">return</string>
 </resources>

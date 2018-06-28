@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/marvelcomicslegacy"
+    android:background="@drawable/page2"
     tools:layout_editor_absoluteX="105dp">
 
     <TextView
@@ -23,10 +23,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="163dp"
+        android:layout_marginBottom="84dp"
         android:onClick="page2"
         android:text="@string/choisir_les_comics"
         android:textSize="15sp"
         tools:ignore="HardcodedText" />
+    <Button
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="ComicsVine"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="217dp"
+        android:text="Site Comics Vine"
+        android:textSize="15sp"
+        android:translationY="80dp"
+        />
+
 
 </RelativeLayout>

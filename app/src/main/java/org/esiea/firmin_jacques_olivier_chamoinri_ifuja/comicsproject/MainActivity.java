@@ -1,97 +1,80 @@
 package org.esiea.firmin_jacques_olivier_chamoinri_ifuja.comicsproject;
 
+import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Process;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import java.net.URL;
+import java.net.URLConnection;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import static com.google.gson.internal.bind.TypeAdapters.URL;
 
-import java.util.ArrayList;
+public class MainActivity extends AppCompatActivity {
 
-
-public class MainActivity extends AppCompatActivity implements ExampleAdapter.OnItemClickListener {
-    public static final String EXTRA_CHARACTER = "Name";
-
-    private RecyclerView mRecyclerView;
-    private ExampleAdapter mExampleAdapter;
-    private ArrayList<ExampleItem> mExampleList;
-    private RequestQueue mRequestQueue;
+    NotificationManager notMan;
+    NotificationCompat.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mRecyclerView = findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mExampleList = new ArrayList<>();
+        builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.mipmap.dc);
+        builder.setContentText(getString(R.string.notif_1));
+        builder.setContentTitle(getString(R.string.notif_2));
+        notMan = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
-        mRequestQueue = Volley.newRequestQueue(this);
-        parseJSON();
-    }
-
-    private void parseJSON() {
-
-        String URL = "https://comicvine.gamespot.com/api/characters/?api_key=4c0a75deb958541f66786fa3cf07b0287bfdd8ef&image=name&sort=name&field_list=name&format=json";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("results");
-
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject results = jsonArray.getJSONObject(i);
-
-                                String characterName = results.getString("name");
-
-
-                                mExampleList.add(new ExampleItem(characterName));
-                            }
-
-                            mExampleAdapter = new ExampleAdapter(MainActivity.this, mExampleList);
-                            mRecyclerView.setAdapter(mExampleAdapter);
-                            mExampleAdapter.setOnItemClickListener(MainActivity.this);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-
-        mRequestQueue.add(request);
-    }
-
-    public void onItemClick(int position) {
-        Intent detailIntent = new Intent(this, DetailActivity.class);
-        ExampleItem clickedItem = mExampleList.get(position);
-
-        detailIntent.putExtra(EXTRA_CHARACTER, clickedItem.getCharacter());
-
-        startActivity(detailIntent);
+        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_menu, menu);
+        return true;
     }
 
     public void page1(View view) {
         startActivity(new Intent(this, page_2.class));
+        notMan.notify(500, builder.build());
     }
 
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case  R.id.Comicsvine:
+                Toast.makeText(getApplicationContext(),"Bienvenue sur Comics Vine", Toast.LENGTH_SHORT).show();
+                return true;
+            case  R.id.Help:
+                Toast.makeText(getApplicationContext(),"Un petit coup de main ?", Toast.LENGTH_SHORT).show();
+                return true;
+            case  R.id.Refresh:
+                Toast.makeText(getApplicationContext(),"Rebelote", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.quitter:
+                moveTaskToBack(true);
+                Process.killProcess(Process.myPid());
+                Toast.makeText(getApplicationContext(),"A la prochaine !! ^^", Toast.LENGTH_SHORT).show();
+                System.exit(1);
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+
+    }
+
 }
+

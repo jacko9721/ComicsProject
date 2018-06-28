@@ -3,6 +3,10 @@
     <string name="bienvenue_sur_notre_application">Bienvenue sur notre application</string>
     <string name="menu">Menu</string>
     <string name="quitter">Quitter</string>
+    <string name="menu1">Comics Vine ?</string>
+    <string name="menu2">Aide</string>
+    <string name="menu3">Rafraichir</string>
+    <string name="menu4">Quitter</string>
     <string name="comic" />
     <string name="choisir_les_comics">choisir les comics</string>
     <string name="retour_accueil">retour accueil</string>

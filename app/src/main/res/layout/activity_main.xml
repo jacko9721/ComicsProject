@@ -4,46 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/dcvsmarvel"
+    android:background="@drawable/fond1"
     tools:context=".MainActivity">
 
-    <LinearLayout
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
         android:gravity="center"
-        android:orientation="vertical"
-        android:layout_alignParentLeft="true">
+        android:text="@string/bienvenue_sur_notre_application"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="35sp"
+        android:translationY="40dp"
+        tools:ignore="HardcodedText"
+        android:layout_alignParentLeft="true" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/bienvenue_sur_notre_application"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="35sp"
-            android:translationY="40dp"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:onClick="page1"
-            android:text="@string/menu"
-            android:textSize="15sp"
-            android:translationY="40dp" />
+    <Button
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="217dp"
+        android:onClick="page1"
+        android:text="@string/menu"
+        android:textSize="15sp"
+        android:translationY="40dp" />
 
 
 
-    </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:background="@drawable/dcvsmarvel" />
 
 </RelativeLayout>
